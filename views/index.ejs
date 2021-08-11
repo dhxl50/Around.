@@ -6,35 +6,40 @@
 		<link rel="stylesheet" href="./styles/style.css"/>
 	</head>
 	
-	<body>
-		<div class="main-container">
-			<div class="header-container">
-				header
-			</div>
-			<div class="bookmark-container">
+	<body class="bg-cover bg-gray-400 w-screen h-screen">
+		
+		<div class="w-full h-12">
+				Around
+		</div>
+		
+		<div class="grid grid-cols-3 grid-flow-col gap-4 place-items-stretch">
+			
+			<div class="col-span-1 row-start-1 row-span-3">
 				bookmarks
 			</div>
 
-			<div class="timer-container">
-				timer
+			<div class="col-start-3 col-span-1 row-start-1 row-span-3">
+				memo
+			</div>
+			
+			
+			<div id="stopWatch-container" class="">
+				<p id="stopWatch">
+					0 h 0 m 0 s
+				</p>
+				<button id="stopWatch-button">start</button>
 			</div>
 
-			<div class="todo-container">
+			<div class="">
 				todo
 			</div>
 
-			<div class="grass-container">
+			<div class="">
 				grass
 			</div>
 
-			<div class="memo-container">
-				memo
-			</div>
+			
 		</div>
-
-		<div class="footer-container">
-			footer
-		</div>
-		<script src="/public/index.js"></script>
+		<script src="./scripts/stopWatch.js"></script>
 	</body>
 </html>
