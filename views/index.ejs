@@ -3,31 +3,46 @@
 	<head>
 		<meta charset="UTF-8" />
 		<title>Around.</title>
-		<link rel="stylesheet" href="./styles/style.css"/>
+		<link rel="stylesheet" href="./styles/style.css" />
 	</head>
-	
+
 	<body class="bg-cover bg-gray-400 w-screen h-screen box-border">
-		
 		<div class="w-full h-12">
-				Around
+			Around
 		</div>
-		
+
 		<div class="grid grid-cols-3 grid-flow-col gap-4 place-items-stretch">
-			
 			<div id="bookmark-container" class="col-span-1 row-start-1 row-span-3">
-				<div id="bookmark-bar" class = "flex flex-col">
-					<button id="add-bookmark-button" class="w-16 h-16 border-red-500 border text-center">
-					+
+				<div id="bookmark-bar" class="flex flex-col">
+					<button
+						id="add-bookmark-button"
+						class="w-16 h-16 border-red-500 border text-center"
+					>
+						+
 					</button>
+
+					<div
+						id="add-bookmark-modal-container"
+						class="hidden bg-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-60 h-60"
+					>
+						<div id="add-bookmark-modal-content" class=""></div>
+						<button id="#close-button" class="w-6 h-6 block" onclick="handleClose()">
+							x
+						</button>
+						<p>Name</p>
+						<input type="text" name="Name" placeholder="ex) Google" class="text-input bg-blue-300 border"/>
+						
+						<p>Url</p>
+						<input type="text" name="Url" placeholder="ex) www.google.com" class="text-input bg-blue-300 border" />
+						<input type="submit" value="Submit" class="submit-button" />
+					</div>
 				</div>
-				
 			</div>
 
 			<div class="col-start-3 col-span-1 row-start-1 row-span-3">
 				memo
 			</div>
-			
-			
+
 			<div id="stopWatch-container" class="">
 				<p id="stopWatch">
 					0 h 0 m 0 s
@@ -42,8 +57,6 @@
 			<div class="">
 				grass
 			</div>
-
-			
 		</div>
 		<script src="./scripts/stopWatch.js"></script>
 		<script src="./scripts/bookmark.js"></script>

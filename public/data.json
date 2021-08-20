@@ -1,0 +1,30 @@
+{
+	"userID": "user01",
+	"userName": "new_user",
+	"bookmarks": [
+		{
+			"name": "Github",
+			"url": "https://www.github.com",
+			"isOpen": true,
+			"icon": "link.."
+		},
+		{
+			"name": "google",
+			"url": "https://www.google.com",
+			"isOpen": false,
+			"icon": "link.."
+		},
+		{
+			"name": "goorm",
+			"url": "https://www.goorm.io",
+			"isOpen": true,
+			"icon": "link.."
+		}
+	],
+	toDos:[
+		{
+			date:"2021-03-26",
+		}
+	]
+	
+}

@@ -10,7 +10,7 @@ let time = {
 	seconds: 57,
 }
 
-const rearrangeTime = () =>{
+function rearrangeTime() {
 	++time.minutes;
 	time.seconds = 0;
 	
@@ -24,7 +24,7 @@ const rearrangeTime = () =>{
 	}
 }
 
-const printTime = () => {
+function printTime() {
 	++time.seconds;
 	if(time.seconds === 60){
 		rearrangeTime();
@@ -33,11 +33,11 @@ const printTime = () => {
 	stopWatch.innerHTML = `${time.hours} h ${time.minutes} m ${time.seconds} s`;
 }
 
-const startCount = () =>{
+function startCount() {
 	stopWatchID = setInterval(printTime,1000);
 }
 
-const handleClick = () =>{
+function handleClick(){ 
 	if(btn.innerHTML=="start"){
 		btn.innerHTML="stop";
 		startCount();
@@ -48,7 +48,7 @@ const handleClick = () =>{
 }
 
 
-const init = () => {
+function init() {
 	btn.addEventListener('click',handleClick);
 }
 

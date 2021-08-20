@@ -21,19 +21,57 @@ const data = [
 
 
 const bookmarkBar = document.querySelector('#bookmark-bar');
+const addBtn = bookmarkBar.querySelector('#add-bookmark-button');
+const addModal = document.querySelector('#add-bookmark-modal-container');
+const submitBtn = bookmarkBar.querySelector('.submit-button');
+const inputText = bookmarkBar.querySelectorAll('.text-input');
 
-const printBM = () => {
-	for(let iter=data.length;iter>0;--iter){
-		let newBookmarkBtn = document.createElement('button');
-		newBookmarkBtn.className = 'w-16 h-16 border-red-500 border text-center';
-		newBookmarkBtn.innerHTML = data[iter-1].name;
-		newBookmarkBtn.addEventListener('click',()=>{
-					window.open(data[iter-1].url,'_blank','resizable=yes');
-		});
-		bookmarkBar.prepend(newBookmarkBtn);
+const bookmarkCss = 'w-16 h-16 border-red-500 border text-center';
+
+function handleSubmit(){
+	const name = inputText[0].value;
+	const url = inputText[1].value;
+	
+	const newBookmarkObj = {
+		name: name,
+		url: url,
+		isOpen: true,
+		icon: 'link..',
 	}
-	
-	
+	data.push(newBookmarkObj);
+	addBookmarkBtn(name,"https://"+url);
 }
 
-printBM();
+
+function handleClose() {
+	addModal.classList.add('hidden');
+}
+
+function handleAdd() {
+	addModal.classList.remove('hidden');
+}
+
+function addBookmarkBtn(name, url) {
+	let newBookmarkBtn = document.createElement('button');
+	newBookmarkBtn.className = bookmarkCss;
+	newBookmarkBtn.innerHTML = name;
+	newBookmarkBtn.addEventListener('click',()=>{
+					window.open(url,'_blank','resizable=yes');
+		});
+	bookmarkBar.prepend(newBookmarkBtn);
+}
+
+function printBookmark () {
+	for(let iter=data.length-1;iter>=0;--iter){
+		addBookmarkBtn(data[iter].name, data[iter].url);
+	}	
+}
+
+
+function init() {
+	printBookmark();
+	addBtn.addEventListener('click',handleAdd);
+	submitBtn.addEventListener('click',handleSubmit);
+}
+
+init();
