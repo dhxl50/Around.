@@ -6,17 +6,18 @@
 		<link rel="stylesheet" href="./styles/style.css" />
 	</head>
 
-	<body class="bg-cover bg-gray-400 w-screen h-screen box-border">
-		<div class="w-full h-12">
-			Around
+	<body class="font-sans bg-cover bg-indigo-200 w-screen h-screen box-border">
+		<div id="header-container" class="w-full h-12  mb-8">
+			<p class="p-2 text-2xl font-semibold">Around.</p>
 		</div>
 
-		<div class="grid grid-cols-3 grid-flow-col gap-4 place-items-stretch">
-			<div id="bookmark-container" class="col-span-1 row-start-1 row-span-3">
-				<div id="bookmark-bar" class="flex flex-col">
+		<div class="grid grid-cols-custom grid-flow-col gap-4 place-items-stretch">
+			
+			<div id="bookmark-container" class="row-start-1 row-span-3 w-10 ml-3">
+				<div id="bookmark-bar" class="flex flex-col space-y-4">
 					<button
 						id="add-bookmark-button"
-						class="w-16 h-16 border-red-500 border text-center"
+						class="w-16 h-16 rounded-lg shadow-lg bg-indigo-500 text-center text-white font-semibold"
 					>
 						+
 					</button>
@@ -39,22 +40,22 @@
 				</div>
 			</div>
 
-			<div class="col-start-3 col-span-1 row-start-1 row-span-3">
+			<div class="rounded-lg shadow-lg bg-white col-start-3 col-span-1 row-start-1 row-span-3">
 				memo
 			</div>
 
-			<div id="stopWatch-container" class="">
+			<div id="stopWatch-container" class="rounded-lg shadow-lg bg-white">
 				<p id="stopWatch">
 					0 h 0 m 0 s
 				</p>
 				<button id="stopWatch-button">start</button>
 			</div>
 
-			<div class="">
+			<div class="rounded-lg shadow-lg bg-white">
 				todo
 			</div>
 
-			<div class="">
+			<div class="rounded-lg shadow-lg bg-white">
 				grass
 			</div>
 		</div>

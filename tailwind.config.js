@@ -1,8 +1,17 @@
+const defaultTheme = require('tailwindcss/defaultTheme')
+
 module.exports = {
-  purge: [],
+  purge: ['./views/index.ejs'],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {},
+    extend: {
+		fontFamily:{
+			sans: ['IBMPlexSansKR-Regular', ...defaultTheme.fontFamily.sans],
+		},
+		gridTemplateColumns: {
+         'custom': '80px minmax(0, 1fr) minmax(0, 1fr)',
+        }
+	},
   },
   variants: {
     extend: {},
