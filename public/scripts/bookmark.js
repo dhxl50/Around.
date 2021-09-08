@@ -26,7 +26,7 @@ const addModal = document.querySelector('#add-bookmark-modal-container');
 const submitBtn = bookmarkBar.querySelector('.submit-button');
 const inputText = bookmarkBar.querySelectorAll('.text-input');
 
-const bookmarkCss = 'w-16 h-16 rounded-lg shadow-lg bg-indigo-500 text-center text-white font-semibold';
+const bookmarkCSS = 'w-16 h-16 rounded-lg shadow-lg bg-indigo-500 text-center text-white font-semibold';
 
 function handleSubmit(){
 	const name = inputText[0].value;
@@ -53,7 +53,7 @@ function handleAdd() {
 
 function addBookmarkBtn(name, url) {
 	let newBookmarkBtn = document.createElement('button');
-	newBookmarkBtn.className = bookmarkCss;
+	newBookmarkBtn.className = bookmarkCSS;
 	newBookmarkBtn.innerHTML = name;
 	newBookmarkBtn.addEventListener('click',()=>{
 					window.open(url,'_blank','resizable=yes');

@@ -7,40 +7,35 @@
 	</head>
 
 	<body class="font-sans bg-cover bg-indigo-200 w-screen h-screen box-border">
-		<div id="header-container" class="w-full h-12  mb-8">
-			<p class="p-2 text-2xl font-semibold">Around.</p>
+		
+		<div id="header-container" class="w-full h-12 m-5">
+			<p id="header-text" class="p-2 text-3xl font-semibold">Around.</p>
 		</div>
 
-		<div class="grid grid-cols-custom grid-flow-col gap-4 place-items-stretch">
+		<div id="contents" class="grid grid-cols-custom grid-flow-col gap-4 place-items-stretch ml-5 mr-5">
 			
-			<div id="bookmark-container" class="row-start-1 row-span-3 w-10 ml-3">
+			<div id="bookmark-container" class="row-start-1 row-span-3 w-13 max-h-96 overflow-auto">
 				<div id="bookmark-bar" class="flex flex-col space-y-4">
-					<button
-						id="add-bookmark-button"
-						class="w-16 h-16 rounded-lg shadow-lg bg-indigo-500 text-center text-white font-semibold"
-					>
+					<button	id="add-bookmark-button" class="w-16 h-16 rounded-lg shadow-lg bg-indigo-500 text-center text-white font-semibold">
 						+
 					</button>
 
-					<div
-						id="add-bookmark-modal-container"
-						class="hidden bg-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-60 h-60"
-					>
+					<div id="add-bookmark-modal-container"	class="hidden bg-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-60 h-60">
 						<div id="add-bookmark-modal-content" class=""></div>
-						<button id="#close-button" class="w-6 h-6 block" onclick="handleClose()">
+						<button id="close-button" class="w-6 h-6 block" onclick="handleClose()">
 							x
 						</button>
 						<p>Name</p>
 						<input type="text" name="Name" placeholder="ex) Google" class="text-input bg-blue-300 border"/>
 						
 						<p>Url</p>
-						<input type="text" name="Url" placeholder="ex) www.google.com" class="text-input bg-blue-300 border"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                />
+						<input type="text" name="Url" placeholder="ex) www.google.com" class="text-input bg-blue-300 border"/>
 						<input type="submit" value="Submit" class="submit-button" />
 					</div>
 				</div>
 			</div>
 
-			<div class="rounded-lg shadow-lg bg-white col-start-3 col-span-1 row-start-1 row-span-3">
+			<div id="memo-container" class="rounded-lg shadow-lg bg-white col-start-3 col-span-1 row-start-1 row-span-3">
 				memo
 			</div>
 
@@ -51,8 +46,26 @@
 				<button id="stopWatch-button">start</button>
 			</div>
 
-			<div class="rounded-lg shadow-lg bg-white">
-				todo
+			<div id="todo-container" class="rounded-lg shadow-lg bg-white">
+				<div id="todo-contents" class="flex flex-col items-center m-3 p-3">
+					<a id="todo-title" class="text-2xl mb-5">Today's Plan</a>
+					<div id="todo-list-container" class="flex flex-wrap w-full">
+						
+						<!--투두 테스트코드
+						<% for(var i = 0; i < 5; i++){ %>
+						<div class="flex items-center justify-center flex-grow border-solid border-4 rounded-md p-3 m-3">
+							<p class="text-xl">TEXT example <%=`${i+1}`%> </p>
+							<button class="h-6 w-6 ml-5">
+								<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-400 border-solid border-2 border-green-400 rounded-lg" viewBox="0 0 20 20" fill="currentColor">
+									<path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+										  </svg>
+							</button>
+						</div>
+						<% } %>
+						-->
+					</div>
+					<input type="text" placeholder="Press enter after typing!" class="w-90 h-14 border-b-2 text-center focus:outline-none border-indigo-400 focus:bg-indigo-100 focus:border-indigo-600" />
+				</div>
 			</div>
 
 			<div class="rounded-lg shadow-lg bg-white">
@@ -61,5 +74,6 @@
 		</div>
 		<script src="./scripts/stopWatch.js"></script>
 		<script src="./scripts/bookmark.js"></script>
+		<script src="./scripts/todo.js"></script>
 	</body>
 </html>
